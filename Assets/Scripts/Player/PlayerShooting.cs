@@ -20,7 +20,7 @@ namespace CompleteProject
         Light gunLight;                                 // Reference to the light component.
 		public Light faceLight;								// Duh
         float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
-
+       
 
         void Awake ()
         {
@@ -32,9 +32,9 @@ namespace CompleteProject
             gunLine = GetComponent <LineRenderer> ();
             gunAudio = GetComponent<AudioSource> ();
             gunLight = GetComponent<Light> ();
-			//faceLight = GetComponentInChildren<Light> ();
+            //faceLight = GetComponentInChildren<Light> ();
+            //btnAttack.GetComponent<UIButton>().AddClick();
         }
-
 
         void Update ()
         {
@@ -46,7 +46,7 @@ namespace CompleteProject
 			if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
             {
                 // ... shoot the gun.
-                Shoot ();
+                //Shoot ();
             }
 #else
             // If there is input on the shoot direction stick and it's time to fire...
