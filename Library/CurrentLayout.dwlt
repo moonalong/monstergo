@@ -71,7 +71,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 471}
   m_MaxSize: {x: 10004, y: 14021}
   vertical: 1
-  controlID: 82
+  controlID: 45
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 471}
   m_MaxSize: {x: 18008, y: 14021}
   vertical: 0
-  controlID: 109
+  controlID: 44
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -356,33 +356,33 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/LuaFramework/Resources
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/LuaFramework/Resources
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\unity project\monstergo
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5e410000
-    m_LastClickedID: 16734
-    m_ExpandedIDs: 000000005e4100009c410000f44200005c430000ffffff7f
+    m_SelectedIDs: c04f0000
+    m_LastClickedID: 20416
+    m_ExpandedIDs: 000000001e4c0000884f000054500000c4530000c6530000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: LuaFramework
-      m_OriginalName: LuaFramework
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 23274
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 2}
     m_SearchString: 
@@ -396,7 +396,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005e4100009c410000f44200005c430000
+    m_ExpandedIDs: 000000001e4c000054500000c4530000c6530000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -423,19 +423,19 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300002e2b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Battle
-      m_OriginalName: Battle
+      m_Name: Scene
+      m_OriginalName: Scene
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 35508
+      m_UserData: 19612
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -448,7 +448,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 27}
     m_GridSize: 16
   m_DirectoriesAreaWidth: 182
 --- !u!114 &14
@@ -514,26 +514,26 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 2c9cfeffa0b0feff5024ffff1e8fffff208fffff228fffff248fffff268fffff288fffff2a8fffff2c8fffff2e8fffff308fffff328fffff348fffff368fffff388fffff3a8fffff3c8fffff3e8fffff408fffff428fffff448fffff468fffff488fffff4a8fffff4c8fffff4e8fffff508fffff528fffff548fffff58d3ffff62d3ffff0ad5ffff0000000066450000126f00007c7000006a710000be710000
+    m_ExpandedIDs: 380ffffff25bfffff85bffffd45dffff60d3ffff66d3ffff40d5fffff4ffffff000000001e5900007c660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: TestGameObjectPrefab(Clone)
+      m_OriginalName: TestGameObjectPrefab(Clone)
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -72816
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
   m_ExpandedScenes:
-  - _Complete-Game
+  - main
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -564,14 +564,14 @@ MonoBehaviour:
     width: 886
     height: 710
   m_SceneLighting: 1
-  lastFramingTime: 9906.36642373732
+  lastFramingTime: 1732.8453900651582
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.24854873, y: -0.35817876, z: 0}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 0.24854873, y: -0.35817876, z: 0}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -598,9 +598,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.231101
+    m_Target: 22
     speed: 2
-    m_Value: 10.231101
+    m_Value: 22
   m_Ortho:
     m_Target: 1
     speed: 2

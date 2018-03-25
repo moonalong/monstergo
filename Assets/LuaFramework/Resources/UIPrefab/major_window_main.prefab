@@ -45,7 +45,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1472910941188460
 GameObject:
   m_ObjectHideFlags: 1
@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 4582547039996748}
   - component: {fileID: 114405174363114074}
   - component: {fileID: 65032036357041290}
+  - component: {fileID: 114897414506774538}
   m_Layer: 5
   m_Name: BtnAttack
   m_TagString: Untagged
@@ -132,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1472910941188460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -542, y: -262, z: 0}
+  m_LocalPosition: {x: -492, y: -212, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4810415298635376}
@@ -147,7 +148,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601933664704490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 569, y: -280, z: 0}
+  m_LocalPosition: {x: 509, y: -220, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4965689682395088}
@@ -232,19 +233,19 @@ MonoBehaviour:
   leftAnchor:
     target: {fileID: 4265037013122952}
     relative: 0
-    absolute: 0
+    absolute: 50
   rightAnchor:
     target: {fileID: 4265037013122952}
     relative: 0
-    absolute: 196
+    absolute: 246
   bottomAnchor:
     target: {fileID: 4265037013122952}
     relative: 0
-    absolute: 0
+    absolute: 50
   topAnchor:
     target: {fileID: 4265037013122952}
     relative: 0
-    absolute: 196
+    absolute: 246
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
@@ -352,19 +353,19 @@ MonoBehaviour:
   leftAnchor:
     target: {fileID: 4965689682395088}
     relative: 1
-    absolute: -142
+    absolute: -202
   rightAnchor:
     target: {fileID: 4965689682395088}
     relative: 1
-    absolute: 0
+    absolute: -60
   bottomAnchor:
     target: {fileID: 4965689682395088}
     relative: 0
-    absolute: 0
+    absolute: 60
   topAnchor:
     target: {fileID: 4965689682395088}
     relative: 0
-    absolute: 160
+    absolute: 220
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
@@ -494,6 +495,31 @@ MonoBehaviour:
   mAtlas: {fileID: 114235360276329016, guid: c445c5fe7bae1e448aa33ddcf9d80bc3, type: 2}
   mSpriteName: stick_arrow
   mFillCenter: 1
+--- !u!114 &114897414506774538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1601933664704490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56b552e5f525a243b14dc25f26962a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 1601933664704490}
+  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
+  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick: []
 --- !u!114 &114967565380240222
 MonoBehaviour:
   m_ObjectHideFlags: 1

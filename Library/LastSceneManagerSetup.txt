@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/LuaFramework/Resources/Scene/_Complete-Game.unity
+- path: Assets/LuaFramework/Scenes/main.unity
   isLoaded: 1
   isActive: 1
