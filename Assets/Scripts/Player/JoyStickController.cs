@@ -6,8 +6,8 @@ using UnityEngine;
 public class JoyStickController : MonoBehaviour {
 
     bool keyboardPressed = false;
-    public float h = 0;
-    public float v = 0;
+    private float h = 0;
+    private float v = 0;
 
     private float parentHeight;
     private float parentWidth;
@@ -28,6 +28,16 @@ public class JoyStickController : MonoBehaviour {
 
     public delegate void HitPlayerOrMonster(int identity);
     public HitPlayerOrMonster hit_cb = null;
+
+    static private JoyStickController _instance;
+    static public JoyStickController getInstance()
+    {
+        if (_instance == null)
+        {
+            _instance = new JoyStickController();
+        }
+        return _instance;
+    }
 
     void Awake()
     {
@@ -50,9 +60,6 @@ public class JoyStickController : MonoBehaviour {
         {
             this.OnPress(isPressed);
         };
-
-
-        Debug.Log("JoyStick Awake");
     }
 
     void Start()
@@ -65,7 +72,7 @@ public class JoyStickController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //if (keyboardPressed) return;
+        if (keyboardPressed) return;
         Vector3 pos;
         if (isPress && PointToJoyStickObject(out pos))
         {
@@ -107,8 +114,6 @@ public class JoyStickController : MonoBehaviour {
             float s = (float)uiRoot.activeHeight / Screen.height;
             DisplayHeight = Mathf.CeilToInt(Screen.height * s);
             DisplayWidth = Mathf.CeilToInt(Screen.width * s);
-            Debug.Log("display height = " + DisplayHeight);
-            Debug.Log("display width = " + DisplayWidth);
         }
     }
 
@@ -118,7 +123,6 @@ public class JoyStickController : MonoBehaviour {
         pos = Vector2.zero;
         float nguiMinX = -DisplayWidth / 2;
         float nguiMinY = -DisplayHeight / 2;
-        Debug.Log("JoyStick nguiMinX=" + nguiMinX + " nguiMinY=" + nguiMinY);
 
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
         if (false)
@@ -244,7 +248,6 @@ public class JoyStickController : MonoBehaviour {
         Vector2 touchpos;
         if (isTouched() && !isPress && FindJoyStickTouch(out touchpos))
         {
-            Debug.Log("JoyStick Press");
             isPress = true;
         }
         else if (isTouched())
@@ -408,6 +411,16 @@ public class JoyStickController : MonoBehaviour {
             state = -1;
             return new Vector2(0, 0);
         }
+    }
+
+    public int goRotateToTarget(GameObject go, GameObject target)
+    {
+        var v2 = new Vector2(target.transform.position.x - go.transform.position.x,
+            target.transform.position.z - go.transform.position.z);
+        int state = 0;
+        var hv = NormFormatHV(out state, v2.x, v2.y);
+        go.transform.LookAt(new Vector3(go.transform.position.x + hv.x, go.transform.position.y, go.transform.position.y + hv.y));
+        return state;
     }
 
     public Vector2 FormatHVWithState(int state)

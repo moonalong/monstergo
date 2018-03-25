@@ -32,17 +32,20 @@ namespace CompleteProject
         void FixedUpdate ()
         {
             // Store the input axes.
-            float h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
-            float v = CrossPlatformInputManager.GetAxisRaw("Vertical");
+            //float h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+            //float v = CrossPlatformInputManager.GetAxisRaw("Vertical");
 
-            // Move the player around the scene.
-            Move (h, v);
+            //Move (h, v);
+            //Turning ();
+            //Animating (h, v);
+            JoyStickController joy = GameObject.Find("Button_Stick").GetComponent<JoyStickController>();
+            int state;
+            Vector2 vec = joy.NormFormatHVJoy(out state);
+            Move(vec.x, vec.y);
+            Vector3 vec3 = new Vector3(vec.x, 0, vec.y);
+            Animating(vec.x, vec.y);
 
-            // Turn the player to face the mouse cursor.
-            Turning ();
-
-            // Animate the player.
-            Animating (h, v);
+            joy.CheckShow();
         }
 
 
@@ -56,6 +59,9 @@ namespace CompleteProject
 
             // Move the player to it's current position plus the movement.
             playerRigidbody.MovePosition (transform.position + movement);
+            //Quaternion newRotatation = Quaternion.LookRotation(transform.position + movement);
+            //playerRigidbody.MoveRotation(newRotatation);
+            transform.LookAt(transform.position + movement);
         }
 
 

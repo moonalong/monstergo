@@ -8,6 +8,7 @@ namespace CompleteProject
         public int damagePerShot = 20;                  // The damage inflicted by each bullet.
         public float timeBetweenBullets = 0.15f;        // The time between each shot.
         public float range = 100f;                      // The distance the gun can fire.
+        private bool isPress = false;
 
 
         float timer;                                    // A timer to determine when to fire.
@@ -20,7 +21,7 @@ namespace CompleteProject
         Light gunLight;                                 // Reference to the light component.
 		public Light faceLight;								// Duh
         float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
-       
+        GameObject btnAttack = null;
 
         void Awake ()
         {
@@ -33,7 +34,12 @@ namespace CompleteProject
             gunAudio = GetComponent<AudioSource> ();
             gunLight = GetComponent<Light> ();
             //faceLight = GetComponentInChildren<Light> ();
-            //btnAttack.GetComponent<UIButton>().AddClick();
+            btnAttack = GameObject.Find("BtnAttack");
+            //UIEventListener.Get(btnAttack).onClick = normalAttack;
+            UIEventListener.Get(btnAttack).onPress = delegate (GameObject o, bool isPressed)
+            {
+                this.normalAttack(isPressed);
+            };
         }
 
         void Update ()
@@ -43,11 +49,13 @@ namespace CompleteProject
 
 #if !MOBILE_INPUT
             // If the Fire1 button is being press and it's time to fire...
-			if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
+            
+            if (this.isPress && timer >= timeBetweenBullets && Time.timeScale != 0)
             {
                 // ... shoot the gun.
-                //Shoot ();
+                Shoot();
             }
+
 #else
             // If there is input on the shoot direction stick and it's time to fire...
             if ((CrossPlatformInputManager.GetAxisRaw("Mouse X") != 0 || CrossPlatformInputManager.GetAxisRaw("Mouse Y") != 0) && timer >= timeBetweenBullets)
@@ -57,11 +65,16 @@ namespace CompleteProject
             }
 #endif
             // If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
-            if(timer >= timeBetweenBullets * effectsDisplayTime)
+            if (timer >= timeBetweenBullets * effectsDisplayTime)
             {
                 // ... disable the effects.
                 DisableEffects ();
             }
+        }
+
+        void normalAttack(bool isPressed)
+        {
+            this.isPress = isPressed;
         }
 
 
