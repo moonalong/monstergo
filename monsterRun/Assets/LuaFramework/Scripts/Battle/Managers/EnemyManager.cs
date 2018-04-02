@@ -6,7 +6,7 @@ namespace CompleteProject
     {
         public PlayerHealth playerHealth;       // Reference to the player's heatlh.
         public GameObject enemy;                // The enemy prefab to be spawned.
-        private float spawnTime = 300f;            // How long between each spawn.
+        private float spawnTime = 5f;            // How long between each spawn.
         public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
 
 
